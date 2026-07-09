@@ -1,7 +1,9 @@
-import { Controller, Get, Post, Req, Body } from '@nestjs/common';
+import { Controller, Get, Post, Req, Body, UseGuards } from '@nestjs/common';
 import { TenantRequest } from './tenant';
+import { ScopeGuard } from './scope.guard';
 import { EducationService } from './education.service';
 
+@UseGuards(ScopeGuard)
 @Controller()
 export class EducationController {
   constructor(private readonly service: EducationService) {}

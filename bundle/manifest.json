@@ -23,7 +23,8 @@
     "defaultBaseUrl": "http://localhost:4101",
     "healthcheck": "/svc/health",
     "scopes": [
-      "education:rw"
+      "education:read",
+      "education:write"
     ],
     "timeoutMs": 15000
   },
