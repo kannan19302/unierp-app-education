@@ -1,0 +1,19 @@
+# Joins the `unierp` external network created by unierp-core's dev compose.
+# The service uses its own database (unierp_education) on the shared dev
+# Postgres instance — logical isolation, no cross-schema access.
+services:
+  education-svc:
+    build: .
+    container_name: unierp-education-svc
+    environment:
+      PORT: 4101
+      DATABASE_URL: postgresql://unerp:unerp_password@unerp-postgres:5432/unierp_education?schema=public
+      EXT_SERVICE_JWT_SECRET: ${EXT_SERVICE_JWT_SECRET:-dev-ext-secret-change-me}
+    ports:
+      - "4101:4101"
+    networks:
+      - unierp
+
+networks:
+  unierp:
+    external: true
