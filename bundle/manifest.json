@@ -1,7 +1,7 @@
 {
   "name": "Education",
   "slug": "education",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "apiVersion": 1,
   "category": "Industry",
   "vendor": "unierp",
@@ -28,5 +28,91 @@
     ],
     "timeoutMs": 15000
   },
-  "pages": []
+  "pages": [
+    {
+      "slug": "students",
+      "title": "Students",
+      "type": "remote",
+      "layout": {
+        "dataUrl": "students",
+        "columns": [
+          {
+            "key": "firstName"
+          },
+          {
+            "key": "lastName"
+          },
+          {
+            "key": "enrollmentNumber"
+          },
+          {
+            "key": "status"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "courses",
+      "title": "Courses",
+      "type": "remote",
+      "layout": {
+        "dataUrl": "courses",
+        "columns": [
+          {
+            "key": "name"
+          },
+          {
+            "key": "code"
+          },
+          {
+            "key": "credits"
+          },
+          {
+            "key": "status"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "student-fees",
+      "title": "Student Fees",
+      "type": "remote",
+      "layout": {
+        "dataUrl": "student-fees",
+        "columns": [
+          {
+            "key": "studentId"
+          },
+          {
+            "key": "balance"
+          },
+          {
+            "key": "status"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "books",
+      "title": "Library",
+      "type": "remote",
+      "layout": {
+        "dataUrl": "books",
+        "columns": [
+          {
+            "key": "title"
+          },
+          {
+            "key": "author"
+          },
+          {
+            "key": "isbn"
+          },
+          {
+            "key": "available"
+          }
+        ]
+      }
+    }
+  ]
 }
